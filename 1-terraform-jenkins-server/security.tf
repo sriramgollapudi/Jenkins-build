@@ -8,7 +8,7 @@ resource "aws_default_security_group" "default-sg" {
     ipv6_cidr_blocks = ["::/0"]
   }
   ingress {
-    from_port   = 8080
+    from_port   = 8010
     to_port     = 9000
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]

@@ -25,15 +25,24 @@ pipeline {
                 }
             }
         }
-        stage("Terraform Apply") {
+        stage("Terraform Destroy") {
             steps {
                 script {
                     dir('2-terraform-eks-deployment') {
-                        sh "terraform apply -auto-approve -no-color"
+                        sh "terraform destroy -auto-approve -no-color"
                     }
                 }
             }
         }
+        // stage("Terraform Apply") {
+        //     steps {
+        //         script {
+        //             dir('2-terraform-eks-deployment') {
+        //                 sh "terraform apply -auto-approve -no-color"
+        //             }
+        //         }
+        //     }
+        // }
         // stage("Deploy Nginx App to EKS") {
         //     steps {
         //         script {
